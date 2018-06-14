@@ -1,0 +1,28 @@
+<!-- app.template.html -->
+<div><button on-click='add'> Add </button> <button on-click='delete'> Delete </button>
+  <table border=1>
+      
+          <tr>
+              <th><input type="checkbox" /></th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        
+    
+        
+        <dom-repeat items="{{gridData}}">
+            <template >
+              <dom-if if="{{item}}" >
+                  <template >
+                <tr>
+                  <td><input type="checkbox" value="{{item.selected}}"  on-click='selectRow' /></td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.email}}</td>
+                </tr>
+                </template>
+            </dom-if>
+            </template>
+          </dom-repeat>
+    
+  </table>
+</div>
